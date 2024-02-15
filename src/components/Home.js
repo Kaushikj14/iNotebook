@@ -8,7 +8,7 @@ function Home() {
   return (
     <div >
       
-      <Notes />
+      <Notes showAlert={showAlert} />
     </div>
   )
 }
