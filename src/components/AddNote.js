@@ -3,7 +3,7 @@ import noteContext from "../context/notes/noteContext";
 import { useState } from 'react';
 
 
-function AddNote() {
+function AddNote(props) {
   
   const context = useContext(noteContext);
   
@@ -14,6 +14,7 @@ function AddNote() {
   const handleClick = (e)=>{
     e.preventDefault();
     addNote(note.title,note.description,note.tag);
+    props.showAlert("Added data succesfully","success");
     setNote({title:"",description:"",tag:""});
   }
 

@@ -16,7 +16,7 @@ function NoteItem(props) {
     <h5 className="card-title">{note.title}</h5>
     <p className="card-text">{note.description}</p>
     {/* Delete icon from the fontAwesome */}
-    <i className="fa-solid fa-trash mx-3" onClick={()=>{deleteNote(note._id)}}></i>
+    <i className="fa-solid fa-trash mx-3" onClick={()=>{deleteNote(note._id); props.showAlert("Delete successfully","success")}}></i>
     <i className="fa-solid fa-pen-to-square mx-3" onClick={()=>{updateNote(note)}}></i>
     {/* <a href="#" class="btn btn-primary">Go somewhere</a> */}
   </div>

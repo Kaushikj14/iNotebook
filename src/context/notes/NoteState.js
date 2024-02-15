@@ -17,7 +17,7 @@ const NoteState = (props) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjViZmM2OTAyMjQ3NDE1NjExYWY5ZjhhIn0sImlhdCI6MTcwNzY3NTQ4Nn0.MDBtumN7qhBN6iZYckAeC5EKF3WVAIMg3Uh4bZxMOdQ"
+        "auth-token": localStorage.getItem('token')
       },
     });
 
@@ -33,7 +33,7 @@ const NoteState = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjViZmM2OTAyMjQ3NDE1NjExYWY5ZjhhIn0sImlhdCI6MTcwNzY3NTQ4Nn0.MDBtumN7qhBN6iZYckAeC5EKF3WVAIMg3Uh4bZxMOdQ"
+        "auth-token": localStorage.getItem('token')
       },
       body: JSON.stringify({title,description,tag})
     });
@@ -49,12 +49,12 @@ const NoteState = (props) => {
       method: 'DELETE',
       headers: {
         'content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjViZmM2OTAyMjQ3NDE1NjExYWY5ZjhhIn0sImlhdCI6MTcwNzY3NTQ4Nn0.MDBtumN7qhBN6iZYckAeC5EKF3WVAIMg3Uh4bZxMOdQ"
+        "auth-token": localStorage.getItem('token')
       },
     });
 
     const json = await response.json();
-    // console.log(json);
+    console.log(json);
     // LOGIC TO DELETE THE NOTE 
     // console.log("Deleting the note with id" + id);
     const newNotes = notes.filter((note) => { return note._id !== id });
@@ -68,13 +68,13 @@ const NoteState = (props) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjViZmM2OTAyMjQ3NDE1NjExYWY5ZjhhIn0sImlhdCI6MTcwNzY3NTQ4Nn0.MDBtumN7qhBN6iZYckAeC5EKF3WVAIMg3Uh4bZxMOdQ"
+        "auth-token": localStorage.getItem('token')
       },
       body: JSON.stringify({title,description,tag})
     });
 
     const json = await response.json();
-    // console.log(json);
+    console.log(json);
 
     let newNotes = JSON.parse(JSON.stringify(notes));
     // LOGIC TO EDIT IN CLIENT

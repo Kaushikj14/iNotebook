@@ -24,7 +24,7 @@ function Login(props) {
                 props.showAlert("LoggedIn succesfully","success")
             }else{
                 // invalid credentials
-                props.showAlert("Invalidd","danger");
+                props.showAlert("Invalid Data","danger");
             }
     }
 
@@ -35,7 +35,8 @@ function Login(props) {
     }
 
     return (
-        <div className='container my-3'>
+        <div className='container my-5'>
+            <h2>Login to continue in iNotebook</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
