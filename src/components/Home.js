@@ -3,8 +3,8 @@ import Notes from './Notes';
 
 
 
-function Home() {
-
+function Home(props) {
+  const {showAlert} = props;
   return (
     <div >
       

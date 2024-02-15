@@ -11,25 +11,20 @@ import NoteState from './context/notes/NoteState';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import { useState } from 'react';
+import Alert from './components/Alert';
 
 
 function App() {
 
-  const [alert,setAlert]=useState(null);
+  const [alert, setAlert] = useState(null);
 
-
-  const showAlert = (message,type)=>{
-
-    showAlert({
-      msg:message,
-      type:type,
+  const showAlert = (message, type) => {
+    setAlert({
+      msg: message,
+      type: type,
     });
-
-    setTimeout(()=>{
-      setAlert(null);
-    },2000)
+    setTimeout(() => { setAlert(null) }, 1500)
   }
-
 
 
   return (
@@ -37,6 +32,7 @@ function App() {
       <NoteState >
         <Router>
           <Navbar />
+          <Alert alert={alert}/>
           <div className="container">
 
             <Routes>
